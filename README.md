@@ -2,12 +2,15 @@
 
 ## Polymath JSON Prompt
 
-A custom ComfyUI node that lets you author **strict JSON** prompts with a simple placeholder templating syntax, while automatically creating **dynamic input ports** for any referenced placeholders.
+A custom ComfyUI node that lets you make auto json prompts with a simple placeholder templating syntax, while automatically creating **dynamic input ports** for any referenced placeholders.
+
 
 ### Why
 
-Building structured prompts (JSON) in ComfyUI is annoying when parts of the JSON must come from other nodes.
-This node solves it by letting you write a JSON template and inject external strings safely.
+Чтобы автоматизировать json промпты, работая с n8n и создавая dataset for lora with qwen-edit in one click
+
+<img width="420" height="420" alt="polymath json node" src="https://github.com/user-attachments/assets/0f1cfd41-a19b-406d-a517-fa36daa0335d" />
+
 
 ### Node
 
@@ -67,14 +70,13 @@ Rules:
 
 ### Install
 
-1. Copy this folder into:
+1. Manual git clone into ComfyUI/custom_nodes:
 
-   `ComfyUI/custom_nodes/ComfyUI-Polymath`
+   ```git clone https://github.com/polymath-wtf/ComfyUI-Polymath-Vibenodes.git```
 
-2. Restart ComfyUI.
+2. Restart UI.
 
 ### Development notes
 
-- Dynamic ports are added/removed by `web/polymath_json_prompt_template.js`.
-- Backend is implemented using the ComfyUI V3 API (`comfy_api.latest.IO`).
-
+- First VibeNode&VibeCode, Enjoy
+- Backend is implemented using the ComfyUI V3 API (`comfy_api.latest.IO`). v3? wtf? idk
