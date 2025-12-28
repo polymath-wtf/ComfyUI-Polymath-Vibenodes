@@ -72,11 +72,14 @@ Rules:
 
 1. Manual git clone into ComfyUI/custom_nodes:
 
-   ```git clone https://github.com/polymath-wtf/ComfyUI-Polymath-Vibenodes.git```
+   ```
+   git clone https://github.com/polymath-wtf/ComfyUI-Polymath-Vibenodes.git
+   ```
 
-2. Restart UI.
+3. Restart UI.
 
 ### Development notes
 
 - First VibeNode&VibeCode, Enjoy
 - Backend is implemented using the ComfyUI V3 API (`comfy_api.latest.IO`). v3? wtf? idk
+
