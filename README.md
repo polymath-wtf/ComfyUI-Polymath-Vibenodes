@@ -1,4 +1,7 @@
-# ComfyUI-Polymath
+# ComfyUI-Polymath-Vibenodes
+
+<img width="1280" height="720" alt="Custom Vibe" src="https://github.com/user-attachments/assets/9aedba75-b2ee-4688-8e66-35977b49908a" />
+
 
 ## Polymath JSON Prompt
 
@@ -11,6 +14,9 @@ A custom ComfyUI node that lets you make auto json prompts with a simple placeho
 
 <img width="420" height="420" alt="polymath json node" src="https://github.com/user-attachments/assets/0f1cfd41-a19b-406d-a517-fa36daa0335d" />
 
+
+<img width="690" height="420" alt="panda example" src="https://github.com/user-attachments/assets/84f59aba-e121-4ed1-935d-eb130baec933" />
+<img width="690" height="420" alt="panda salto" src="https://github.com/user-attachments/assets/f0b88386-9de0-4e23-a7ac-b5b71a26c389" />
 
 ### Node
 
@@ -82,4 +88,5 @@ Rules:
 
 - First VibeNode&VibeCode, Enjoy
 - Backend is implemented using the ComfyUI V3 API (`comfy_api.latest.IO`). v3? wtf? idk
+
 
