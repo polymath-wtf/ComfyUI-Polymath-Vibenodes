@@ -92,15 +92,6 @@ class PM_JsonPrompt(IO.ComfyNode):
 
     @classmethod
     def execute(cls, template: str, **kwargs) -> IO.NodeOutput:
-        used_keys = {m.group("key") for m in _PLACEHOLDER_RE.finditer(template or "")}
-
-        missing = [k for k in sorted(used_keys) if k not in kwargs or kwargs.get(k) is None]
-        if missing:
-            raise RuntimeError(
-                "Missing inputs for template placeholders: "
-                + ", ".join(missing)
-                + ". Connect these inputs to the node."
-            )
 
         def replace(m: re.Match[str]) -> str:
             key = m.group("key")
