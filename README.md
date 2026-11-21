@@ -1,6 +1,7 @@
 # Vibenodes для ComfyUI
 
 Ноды для сборки промптов, загрузки медиа и выбора кадров. Категория в ComfyUI: **Vibenode**.
+<img width="1280" height="720" alt="Custom Vibe" src="https://github.com/user-attachments/assets/9aedba75-b2ee-4688-8e66-35977b49908a" />
 
 ## Vibenode Polyprompt JSON
 
