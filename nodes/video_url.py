@@ -2,16 +2,21 @@ import hashlib
 import errno
 import ipaddress
 import socket
+import ssl
 from html.parser import HTMLParser
 from pathlib import Path
 from tempfile import NamedTemporaryFile
 
 import aiohttp
 import av
+import certifi
 import folder_paths
 import nodes
 from comfy_api.latest import io
 from yarl import URL
+
+MEDIA_TLS = ssl.create_default_context()
+MEDIA_TLS.load_verify_locations(cafile=certifi.where())
 
 
 def download_url(path):
@@ -70,7 +75,8 @@ async def fetch_video(path, directory):
         if cached.is_file():
             return cached
     limit = 1024**3
-    async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(socket_factory=public_socket),
+    async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(ssl=MEDIA_TLS, socket_factory=public_socket),
+                                     requote_redirect_url=False,
                                      timeout=aiohttp.ClientTimeout(total=600, sock_read=45)) as session:
         url = await resolve_tmpfiles(session, url)
         async with session.get(url, max_redirects=5) as response:

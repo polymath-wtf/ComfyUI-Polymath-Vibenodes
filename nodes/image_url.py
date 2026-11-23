@@ -9,7 +9,7 @@ from aiohttp import web
 from comfy_api.latest import io
 from PIL import Image, ImageOps, UnidentifiedImageError
 
-from .video_url import download_url, public_socket, resolve_tmpfiles
+from .video_url import MEDIA_TLS, download_url, public_socket, resolve_tmpfiles
 
 
 def is_storage_origin(url):
@@ -25,8 +25,8 @@ def is_storage_origin(url):
 async def fetch_image(url):
     target = download_url(url)
     storage = is_storage_origin(target)
-    connector = aiohttp.TCPConnector(socket_factory=None if storage else public_socket)
-    async with aiohttp.ClientSession(connector=connector,
+    connector = aiohttp.TCPConnector(ssl=MEDIA_TLS, socket_factory=None if storage else public_socket)
+    async with aiohttp.ClientSession(connector=connector, requote_redirect_url=False,
                                      timeout=aiohttp.ClientTimeout(total=90)) as session:
         if not storage:
             target = await resolve_tmpfiles(session, target)

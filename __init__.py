@@ -4,6 +4,7 @@ from .nodes.creator import BatchInfo, FirstFrameVibe, FrameSelectVibe, FramesSel
 from .nodes.vibenodes import JsonList, NumberRange, PromptPreview, PromptTemplate
 from .nodes.video_url import LoadVideoURL
 from .nodes.image_url import LoadImageURL, image_preview
+from .nodes.save_metadata import SaveImageMetadata
 
 WEB_DIRECTORY = "./web"
 
@@ -15,7 +16,8 @@ class VibenodeExtension(ComfyExtension):
 
     async def get_node_list(self):
         return [TextVibe, PromptTemplate, JsonList, NumberRange, PromptPreview, FramesSelector, ImageSelect,
-                FirstFrameVibe, LastFrameVibe, FrameSelectVibe, PingPong, BatchInfo, PromptLines, LoadVideoURL, LoadImageURL]
+                FirstFrameVibe, LastFrameVibe, FrameSelectVibe, PingPong, BatchInfo, PromptLines, LoadVideoURL, LoadImageURL,
+                SaveImageMetadata]
 
 
 async def comfy_entrypoint():
